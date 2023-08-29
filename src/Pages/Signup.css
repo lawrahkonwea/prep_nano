@@ -1,0 +1,21 @@
+.show-signup {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.342);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.signup-container {
+  width: 800px;
+  max-width: 100%;
+  min-height: 100px; /* can remove it later  */
+  background: #fff;
+  border-radius: 12px;
+}
