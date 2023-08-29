@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import Sidebar from './Sidebar';
 
-const NavBar = () => {
+const NavBar = ({ handleClick }) => {
   const [sidebarVisible, setSidebarVisible] = useState(false);
 
   const toggleSidebar = () => {
@@ -21,13 +22,15 @@ const NavBar = () => {
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink to="/signup" onClick={toggleSidebar}>
-            Signup
-          </NavLink>
+
+          <button type="button" onClick={handleClick}>Signup</button>
         </li>
       </ul>
     </nav>
   );
 };
 
+NavBar.propTypes = {
+  handleClick: PropTypes.func.isRequired,
+};
 export default NavBar;

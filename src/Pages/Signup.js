@@ -1,25 +1,28 @@
 import React from 'react';
-// import { Link } from 'react-router-dom/dist'
-import Homepage from './Homepage';
+import PropTypes from 'prop-types';
 import './Signup.css';
 
-const Signup = () => {
+const Signup = ({ setActive }) => {
   const handleModal = () => {
-    window.history.go(-1);
+    window.history.replaceState(null, 'homepage', '/');
+    setActive(false);
   };
 
   return (
     <div>
-      <Homepage />
+
       <div className="show-signup">
         <div className="signup-container">
           <button type="button" style={{ marginLeft: 'auto' }} onClick={handleModal}>X</button>
-          {/* <Link to="/" style={{marginLeft: 'auto'}}>X</Link>  This method can also work  */}
           <h4>Hello Amaka! I am from signup</h4>
         </div>
       </div>
     </div>
   );
+};
+
+Signup.propTypes = {
+  setActive: PropTypes.func.isRequired,
 };
 
 export default Signup;
