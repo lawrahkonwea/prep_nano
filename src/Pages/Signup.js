@@ -2,15 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Signup.css';
 
-const Signup = ({ setActive }) => {
+const Signup = ({ setActive, currentUrl }) => {
   const handleModal = () => {
-    window.history.replaceState(null, 'homepage', '/');
+    window.history.replaceState(null, '', currentUrl);
     setActive(false);
   };
 
   return (
     <div>
-
       <div className="show-signup">
         <div className="signup-container">
           <button type="button" style={{ marginLeft: 'auto' }} onClick={handleModal}>X</button>
@@ -23,6 +22,7 @@ const Signup = ({ setActive }) => {
 
 Signup.propTypes = {
   setActive: PropTypes.func.isRequired,
+  currentUrl: PropTypes.func.isRequired,
 };
 
 export default Signup;
