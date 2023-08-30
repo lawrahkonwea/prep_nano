@@ -17,12 +17,21 @@ const NavBar = ({ handleClick }) => {
       </button>
       <ul className="nav-list">
         <li className="nav-item">
-          <NavLink to="/" onClick={toggleSidebar} exact>
+          <NavLink to="/" onClick={toggleSidebar}>
             Homepage
           </NavLink>
         </li>
         <li className="nav-item">
-
+          <NavLink to="/about" onClick={toggleSidebar}>
+            About
+          </NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink to="/contact" onClick={toggleSidebar}>
+            Contact
+          </NavLink>
+        </li>
+        <li className="nav-item">
           <button type="button" onClick={handleClick}>Signup</button>
         </li>
       </ul>
